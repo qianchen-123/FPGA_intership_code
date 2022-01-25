@@ -1,21 +1,26 @@
 # FPGA_intership_code
 
 
-开发环境：Modelsim
-开发语言：VHDL
+开发环境：Modelsim， 时钟为5ps  
+开发语言：VHDL  
 
 
------------------------------------------answer code ---------------------------------------------
-pipeline1.vhd : 1) 实现上述总线同步握手场景，不考虑异步场景；
-pipeline2.vhd : 2) 假定master的valid信号不满足时序要求，要对valid信号用寄存器打一拍，实现该总线握手场景；
-pipeline3.vhd : 3) 假定slave的ready信号不满足时序要求，要对ready信号用寄存器打一拍，实现该总线握手场景；
-pipeline4.vhd : 4) 假定valid和ready信号都不满足时序要求，都需要用寄存器打一拍，实现该总线握手场景; 
+-----------------------------------------answer code ---------------------------------------------  
+pipeline1.vhd : 1) 实现上述总线同步握手场景，不考虑异步场景；  
+pipeline2.vhd : 2) 假定master的valid信号不满足时序要求，要对valid信号用寄存器打一拍，实现该总线握手场景；  
+pipeline3.vhd : 3) 假定slave的ready信号不满足时序要求，要对ready信号用寄存器打一拍，实现该总线握手场景；  
+pipeline4.vhd : 4) 假定valid和ready信号都不满足时序要求，都需要用寄存器打一拍，实现该总线握手场景;   
 
------------------------------------------test bench ------------------------------------------
-pipeline1.vhd : pip1_tb.vhd
-pipeline2.vhd : pip2_tb.vhd
-pipeline3.vhd : pip3_tb.vhd
-pipeline4.vhd : pip4_tb.vhd
+-----------------------------------------test bench ------------------------------------------  
+pipeline1.vhd : pip1_tb.vhd  
+pipeline2.vhd : pip2_tb.vhd  
+pipeline3.vhd : pip3_tb.vhd  
+pipeline4.vhd : pip4_tb.vhd  
 
 
-----------------------------------------------wave image-------------------------------------------
+----------------------------------------------wave image-------------------------------------------  
+pip1_tb_wave.png  
+pip2_tb_wave.png  
+pip3_tb_wave.png  
+pip4_tb_wave.png  
+
