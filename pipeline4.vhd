@@ -56,9 +56,10 @@ begin
 		if reset = '0' then
 		elsif rising_edge(clock) then
 			valid_reg_output <= valid_reg_input;
+			ready_reg_output <= ready_reg_input;
 			if ready_input='1' then
 				data_reg_output <= data_reg_input;
-				ready_reg_output <= ready_input;
+				--ready_reg_output <= ready_input;
 			end if;
 		end if;	
 	end process pipeline4;
