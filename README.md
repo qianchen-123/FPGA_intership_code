@@ -33,5 +33,7 @@ pip4_tb_wave.png
 https://www.itdev.co.uk/blog/pipelining-axi-buses-registered-ready-signals  
 
 修改pipeline3 ，并添加 pipeline5  
+仿真波形：pip3_tb_1.png
+
 
 
