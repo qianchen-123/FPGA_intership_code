@@ -30,5 +30,8 @@ pip4_tb_wave.png
 高性能传输气泡：在master发送数据后，数据可以在pipeline的寄存器中保存，而不是master的数据输出端口一直保持数据不变  
 逐级反压：在master的valid信号拉高，准备发送data值时，如果slave的ready信号保持低位，则需要master持续拉高valid信号并保持数据输出端口数据不变  
 
+https://www.itdev.co.uk/blog/pipelining-axi-buses-registered-ready-signals  
+
+修改pipeline3 ，并添加 pipeline5  
 
 
