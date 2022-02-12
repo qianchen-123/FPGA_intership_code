@@ -70,60 +70,56 @@ begin
 
 		-- Initialise input signals
 		reset <= '0';
-		data_input <= (others=>'0');
+		data_input <= (others=>'Z');
+		valid_input <= '0';
+		ready_input <= '0';
+		
 		
 		------reset为1，开始执行------
 		wait until rising_edge(clock);
 		reset <= '1';
-		-------发送方准备发送数据，接收方准备接受数据-----
+
+
+		-----master开始输出数据,slave未准备好接收数据-------
 		wait until rising_edge(clock);
-		valid_input <= '1';		
+		ready_input <= '0';
+		valid_input <= '1';
+		data_input <= X"01";
+		wait until rising_edge(clock);
+		--data_input <= X"02";
+		
+		-----slave准备好接收数据-----
 		wait until rising_edge(clock);
 		ready_input <= '1';
 		
-		------发送方改变发送的数据-----------------
 		wait until rising_edge(clock);
-		data_input <= X"12";
-
-		------发送方改变发送的数据-----------------
+		data_input <= X"02";
 		wait until rising_edge(clock);
-		data_input <= X"AB";
+		data_input <= X"03";
 		
-		------发送方改变发送的数据-----------------
+		-----slave未准备好接收数据-----
 		wait until rising_edge(clock);
-		data_input <= X"34";
-		
-		
-		
-		------接收方暂停接受数据-----------------
+		ready_input <= '0';
+		data_input <= X"04";
 		wait until rising_edge(clock);
-		ready_input <='0';
-		data_input <= X"69";
-		
-		------接收方开始接受数据------------------
+		data_input <= X"05";
 		wait until rising_edge(clock);
-		ready_input <='1';
-		
-		-------发送方暂停发送数据-------------------
 		wait until rising_edge(clock);
-		data_input <= (others=>'Z');
-		valid_input <= '0';
-		
-		-------发送方开始发送数据-------------------
+		-----slave准备好接收数据-----
 		wait until rising_edge(clock);
-		valid_input <= '1';
-		data_input <= X"78";
+		ready_input <= '1';
 
 		wait until rising_edge(clock);
-		ready_input <='0';
-		data_input <= X"28";
-		
+		data_input <= X"06";
 		wait until rising_edge(clock);
-		ready_input <='0';
+		data_input <= X"07";
 		wait until rising_edge(clock);
-		ready_input <='1';
-		
+		ready_input <= '0';
+		data_input <= X"08";
 		wait until rising_edge(clock);
+		data_input <= X"09";
+		wait until rising_edge(clock);
+		ready_input <= '1';
 		wait until rising_edge(clock);
 
 		StopClock <= true;
